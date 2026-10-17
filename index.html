@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Digital business card for Tatiana G. Munoz, PA — RE/MAX Select Group, South Florida real estate.">
+<meta property="og:title" content="Tatiana G. Munoz, PA | Real Estate Group">
+<meta property="og:description" content="Tap to call, text, email or save my contact.">
+<meta property="og:image" content="assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon.png">
+<title>Tatiana G. Munoz, PA | Digital Business Card</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+:root{--bg:#f1effb;--card:#fff;--text:#1b1633;--muted:#6b6785;--accent:#6d3df5;--accent-text:#fff;--line:#e4e0f5;--chip:#f1effb;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14111f;--card:#1e1a2e;--text:#f2f0fb;--muted:#a9a5c4;--accent:#9a78ff;--accent-text:#14111f;--line:#332e4a;--chip:#272238;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14111f;--card:#1e1a2e;--text:#f2f0fb;--muted:#a9a5c4;--accent:#9a78ff;--accent-text:#14111f;--line:#332e4a;--chip:#272238;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;display:flex;justify-content:center;padding:20px 16px 40px}
+.card{width:100%;max-width:420px;background:var(--card);border-radius:24px;overflow:hidden;box-shadow:0 10px 40px rgba(109,61,245,.15)}
+.top{background:#6d3df5;height:260px;overflow:hidden}
+.top img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
+.avatar{width:112px;height:112px;border-radius:50%;background:#fff;overflow:hidden;display:flex;align-items:center;justify-content:center;margin:-56px auto 12px;border:4px solid var(--card);position:relative;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+.avatar img{width:100%;height:100%;object-fit:contain}
+.body{padding:0 24px 24px;text-align:center}
+h1{font:600 26px Georgia,"Times New Roman",serif;margin:4px 0 4px}
+.role{color:var(--accent);font-weight:600;font-size:14px;margin:0 0 4px}
+.sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:18px}
+.badges span{background:var(--chip);color:var(--muted);font-size:11px;padding:4px 10px;border-radius:999px}
+.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.actions a{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 4px;border-radius:14px;background:var(--accent);color:var(--accent-text);text-decoration:none;font-size:13px;font-weight:600}
+.actions .ic{font-size:20px;line-height:1}
+.list{text-align:left;border-top:1px solid var(--line)}
+.row{display:flex;gap:14px;align-items:center;padding:14px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--text)}
+.row .ic{width:38px;height:38px;border-radius:50%;background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:17px;flex:none}
+.row small{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.row span{font-size:14px;word-break:break-word}
+.btns{display:flex;gap:10px;margin-top:18px}
+.btns button,.cta{flex:1;padding:13px;border-radius:12px;border:1.5px solid var(--accent);background:transparent;color:var(--accent);font:600 14px inherit;font-family:inherit;cursor:pointer;text-decoration:none;text-align:center}
+.cta.alt{background:transparent;color:var(--accent);margin-top:10px}
+.cta{background:var(--accent);color:var(--accent-text);display:block;margin-top:18px}
+.cta.alt{background:transparent;color:var(--accent);border:1.5px solid var(--accent);margin-top:10px}
+#qr{display:flex;justify-content:center;margin:20px 0 6px}
+#qr img,#qr canvas{border-radius:8px;background:#fff;padding:8px}
+.hint{color:var(--muted);font-size:12px;margin:0}
+.foot{color:var(--muted);font-size:11px;margin-top:18px}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--text);color:var(--bg);padding:10px 16px;border-radius:999px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none}
+#toast.on{opacity:1}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="top"><img alt="Tatiana Munoz with her family" src="assets/photo.jpg"></div>
+  <div class="body">
+    <div class="avatar"><img alt="Tatiana Munoz Real Estate Group logo" src="assets/logo.png"></div>
+    <h1>Tatiana G. Munoz, PA</h1>
+    <p class="role">Real Estate Group · RE/MAX Select Group</p>
+    <p class="sub">Trusted South Florida real estate expert</p>
+    <div class="badges"><span>RE/MAX Platinum Club</span><span>CRS</span><span>CLHMS</span><span>ABR</span><span>CDPE</span><span>ePRO</span></div>
+
+    <div class="actions">
+      <a href="tel:+19546846532"><span class="ic">📞</span>Call</a>
+      <a href="sms:+19546846532"><span class="ic">💬</span>Text</a>
+      <a href="mailto:TatianaSellsHomes@att.net"><span class="ic">✉️</span>Email</a>
+    </div>
+
+    <div class="list">
+      <a class="row" href="tel:+19546846532"><div class="ic">📱</div><div><small>Phone</small><span>+1 (954) 684-6532</span></div></a>
+      <a class="row" href="mailto:TatianaSellsHomes@att.net"><div class="ic">✉️</div><div><small>Email</small><span>TatianaSellsHomes@att.net</span></div></a>
+      <a class="row" href="mailto:admin@tatianamunoz.com"><div class="ic">📨</div><div><small>Office email</small><span>admin@tatianamunoz.com</span></div></a>
+      <a class="row" href="https://tatianamunoz.com/" target="_blank" rel="noopener"><div class="ic">🌐</div><div><small>Website</small><span>tatianamunoz.com</span></div></a>
+      <a class="row" href="https://18751nw24court.com/" target="_blank" rel="noopener"><div class="ic">🏡</div><div><small>Featured listing</small><span>18751nw24court.com</span></div></a>
+      <a class="row" href="https://www.google.com/maps/search/?api=1&query=15723+Pines+Blvd+Pembroke+Pines+FL+33027" target="_blank" rel="noopener"><div class="ic">📍</div><div><small>Office</small><span>RE/MAX Select Group, 15723 Pines Blvd, Pembroke Pines, FL 33027</span></div></a>
+    </div>
+
+    <a class="cta" href="tatiana-munoz.vcf" download>Save to contacts</a>
+    <a class="cta alt" href="https://tatianamunoz.com/" target="_blank" rel="noopener">Schedule an appointment</a>
+
+    <div class="btns">
+      <button id="share" type="button">Share card</button>
+      <button id="copy" type="button">Copy link</button>
+    </div>
+
+    <div id="qr"></div>
+    <p class="hint">Scan to open this card</p>
+    <p class="foot">Serving Miramar, Pembroke Pines, Weston, Davie and Cooper City<br>Designed by Matt. AK</p>
+  </div>
+</main>
+<div id="toast"></div>
+<script>
+(function(){
+  var toast=document.getElementById('toast');
+  function say(m){toast.textContent=m;toast.classList.add('on');setTimeout(function(){toast.classList.remove('on')},1800)}
+  function copy(t){
+    if(navigator.clipboard&&navigator.clipboard.writeText){return navigator.clipboard.writeText(t)}
+    return Promise.reject()
+  }
+  try{
+    if(window.QRCode){new QRCode(document.getElementById('qr'),{text:location.href,width:150,height:150,correctLevel:QRCode.CorrectLevel.M})}
+  }catch(e){}
+  document.getElementById('share').onclick=function(){
+    var d={title:'Tatiana G. Munoz, PA',text:'Tatiana Munoz, Real Estate Group',url:location.href};
+    if(navigator.share){navigator.share(d).catch(function(){})}
+    else{copy(location.href).then(function(){say('Link copied')},function(){say('Copy the page link from your browser')})}
+  };
+  document.getElementById('copy').onclick=function(){copy(location.href).then(function(){say('Link copied')},function(){say('Copy not available here')})};
+  })();
+</script>
+</body>
+</html>
